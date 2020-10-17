@@ -45,6 +45,7 @@ const CurrentWeather = ({ response }) => {
                             <h3 className={`temperature white`}>{parseInt(temperature.temp) + `\xB0C`}</h3>
                             <h3 className={`weather white`}>{weather[0].main}</h3>
                             <h3 className={`humidity white`}>
+                                <img className="humidity-icon" src={humidity} alt="icon"></img>
                                 {temperature.humidity + ` %`}
                             </h3>
                         </div>
