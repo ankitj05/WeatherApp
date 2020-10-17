@@ -7,9 +7,6 @@ import logo from './Images/Logo.svg'
 
 const App = () => {
 
-  const LAT = `18.5887772`;
-  const LONG = `74.0053302`;
-  const APP_ID = `ccc056632fb8127251da55568bc520aa`;
   var position = {};
 
   const [current, setCurrent] = useState({});
