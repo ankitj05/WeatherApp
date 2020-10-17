@@ -6,34 +6,7 @@ const CurrentWeather = ({ response }) => {
     const temperature = response.main;
     const city = response.name;
     const weather = response.weather;
-    var color = 'white';
-
-    if (temperature && weather[0]) {
-        let main = weather[0].main;
-        let mausam = 'App';
-        if (main.includes("Cloud")) {
-            mausam = 'cloud';
-        }
-        else if (main.includes("Clear")) {
-            mausam = 'clear-sky';
-        }
-        else if (main.includes("Snow")) {
-            mausam = 'snow';
-            color = 'black'
-        }
-        else if (main.includes("Rain")) {
-            mausam = 'rain';
-        }
-        else if (main.includes("Thunderstorm")) {
-            mausam = 'thunder'
-        }
-        else {
-            mausam = 'mist'
-            color = 'black'
-        }
-        var div = document.getElementById("App");
-        div.className = `App ${mausam}`
-    }
+    setClassBasedonWeather(temperature, weather);
 
     return (
         <div className="current">
@@ -51,7 +24,14 @@ const CurrentWeather = ({ response }) => {
                         </div>
                     </div>
                 ) : (
-                        <h1 className="Loading">Loading...  </h1>
+                        <div>
+                            {(response.cod === '404') ? (
+                                <div>
+                                    <h1 className="Loading">City Not Found</h1>
+                                </div>
+                            ) : (' ')}
+
+                        </div>
                     )
             }
 
@@ -59,4 +39,30 @@ const CurrentWeather = ({ response }) => {
     )
 }
 
+const setClassBasedonWeather = (temperature, weather) => {
+    if (temperature && weather[0]) {
+        let main = weather[0].main;
+        let mausam = 'App';
+        if (main.includes("Cloud")) {
+            mausam = 'cloud';
+        }
+        else if (main.includes("Clear")) {
+            mausam = 'clear-sky';
+        }
+        else if (main.includes("Snow")) {
+            mausam = 'snow';
+        }
+        else if (main.includes("Rain")) {
+            mausam = 'rain';
+        }
+        else if (main.includes("Thunderstorm")) {
+            mausam = 'thunder'
+        }
+        else {
+            mausam = 'mist'
+        }
+        var div = document.getElementById("App");
+        div.className = `App ${mausam}`
+    }
+}
 export default CurrentWeather;

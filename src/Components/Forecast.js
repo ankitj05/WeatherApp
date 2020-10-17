@@ -13,7 +13,7 @@ const ForecastWeather = ({ response }) => {
                         <ForecastItems key={uuid()} item={forecast} />
                     ))
                 }
-            </div>) : (<h1 className="Loading">Loading...  </h1>)}
+            </div>) : ('')}
         </div>
     )
 }
