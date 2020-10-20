@@ -14,6 +14,7 @@
     display: flex;
     justify-content: space-around;
     margin-top: -24vh;
+    flex-wrap: wrap;
 }
 
 .forecast-item .date{
@@ -111,18 +112,3 @@
     color:rgba(250, 246, 246);
 }
 
-
-.Loading{
-    text-align: center;
-    color: rgba(250, 246, 246);
-}
-
-/* img .Rain {
-    background-image: url('../Images/rain.jpg');
-    height: 10%;
-    Center and scale the image nicely
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    opacity: 0.9;
-  } */

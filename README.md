@@ -13,6 +13,6 @@ Learnings:
 4. To understand more about the design, I created the design on Figma. Link for Figma will be shared soon.
 5. Integrate API's to React.
 
-PS: This is not responsive. Will be done shortly.
-
 You can visit the website @ http://tiny.cc/nuyzsz
+
+*** This website is made using Openweather API's

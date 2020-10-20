@@ -6,6 +6,10 @@ import logo from './Images/Logo.svg'
 
 const App = () => {
 
+  const LAT = `18.5887772`;
+  const LONG = `74.0053302`;
+  const APP_ID = process.env.REACT_APP_API_KEY;
+
   const [current, setCurrent] = useState({});
   const [forecast, setForecast] = useState([]);
   const [search, setSearch] = useState('');

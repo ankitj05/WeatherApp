@@ -12,6 +12,7 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
+    flex-wrap: wrap;
 }
 
 .current-summary .temperature {
@@ -22,27 +23,13 @@
     margin-top: -14vh;
 }
 
-.current-summary .temperature .black{
-    color: rgba(0, 0, 0);
-}
-
-.current-summary .temperature .white{
-    color: rgba(250, 246, 246, 0.83);
-}
-
 .current-summary .weather {
     font-family: 'Montserrat', sans-serif;
     font-style: normal;
     font-weight: normal;
     font-size: 90px;
     margin-top: -15vh;
-}
-
-.current-summary .weather .black{
-    color: rgba(0, 0, 0);
-}
-.current-summary .weather .white{
-    color:rgba(250, 246, 246, 0.83);
+    word-wrap: break-word;
 }
 
 .current-summary .humidity {
@@ -58,19 +45,8 @@
     margin-right: 1vh;
 }
 
-.current-summary .humidity .black{
-    color: rgba(0, 0, 0);
-}
-.current-summary .humidity .white{
-    color: rgba(250, 246, 246, 0.83);
-}
-
 .white {
     color: rgba(250, 255, 255);
-}
-
-.black {
-    color: rgba(0, 0, 0);
 }
 
 .Loading{
