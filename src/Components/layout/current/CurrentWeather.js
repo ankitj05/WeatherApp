@@ -1,11 +1,17 @@
-import React from 'react';
-import '../styles/Current.css'
-import humidity from '../Images/humidity_white.svg'
+import React, { useContext } from 'react';
+import '../../../styles/Current.css'
+import humidity from '../../../Images/humidity_white.svg'
+import WeatherContext from '../../../context/weatherContext';
 
-const CurrentWeather = ({ response }) => {
-    const temperature = response.main;
-    const city = response.name;
-    const weather = response.weather;
+const CurrentWeather = () => {
+
+    const weatherContext = useContext(WeatherContext);
+
+    const { currentWeather } = weatherContext;
+
+    const temperature = currentWeather.main;
+    const city = currentWeather.name;
+    const weather = currentWeather.weather;
     setClassBasedonWeather(temperature, weather);
 
     return (
@@ -25,7 +31,7 @@ const CurrentWeather = ({ response }) => {
                     </div>
                 ) : (
                         <div>
-                            {(response.cod === '404') ? (
+                            {(currentWeather.cod === '404') ? (
                                 <div>
                                     <h1 className="Loading">City Not Found</h1>
                                 </div>

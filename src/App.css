@@ -20,7 +20,8 @@
 
 .search-bar {
   width: 30%;
-  border: none;
+  /* border: none; */
+  border-color: black;
   padding: 10px;
   background: #FEF8F8;
   border-radius: 35.5px;

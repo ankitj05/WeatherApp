@@ -1,6 +1,6 @@
 import React from 'react';
-import '../styles/Forecast.css';
-import humidity from '../Images/humidity.svg'
+import '../../../styles/Forecast.css';
+import humidity from '../../../Images/humidity.svg'
 
 const ForecastItems = ({ item }) => {
     var forecast = getForecast(item);
@@ -44,7 +44,7 @@ const getIcon = (forecast) => {
     let div = document.getElementsByClassName("forecast-item")
     let weatherIcon = document.createElement('img');
     if (weather.includes("cloud")) {
-        weatherIcon.innerHTML = <img src="../Images/cloud_black.svg"></img>
+        weatherIcon.innerHTML = <img src="../../../Images/cloud_black.svg"></img>
     }
     else if (weather.includes("clear")) {
     }
@@ -55,7 +55,7 @@ const getIcon = (forecast) => {
     else if (weather.includes("thunder")) {
     }
     else if (weather.includes("rain")) {
-        weatherIcon.src = `../Images/rain_black.svg`
+        weatherIcon.src = `../../../Images/rain_black.svg`
         weatherIcon.className = "icon"
         div.appendChild(weatherIcon)
     }
