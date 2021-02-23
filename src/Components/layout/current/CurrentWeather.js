@@ -1,5 +1,4 @@
 import React, { useContext } from 'react';
-import '../../../styles/Current.css'
 import humidity from '../../../Images/humidity_white.svg'
 import WeatherContext from '../../../context/weatherContext';
 
@@ -15,25 +14,25 @@ const CurrentWeather = () => {
     setClassBasedonWeather(temperature, weather);
 
     return (
-        <div className="current">
+        <div className="text-white font-sans non-italic font-normal slashed-zero text-center font-montserrat">
             {
                 (temperature && weather[0]) ? (
                     <div >
-                        <h2 className={`city white`}>{city}</h2>
-                        <div className={`current-summary white`}>
-                            <h3 className={`temperature white`}>{parseInt(temperature.temp) + `\xB0C`}</h3>
-                            <h3 className={`weather white`}>{weather[0].main}</h3>
-                            <h3 className={`humidity white`}>
-                                <img className="humidity-icon" src={humidity} alt="icon"></img>
-                                {temperature.humidity + ` %`}
-                            </h3>
+                        <h2 className="relative text-8xl text-center -mt-2">{city}</h2>
+                        <div className="flex flex-wrap justify-around items-center mt-1 text-8xl md:flex-1">
+                            <h3 className="">{parseInt(temperature.temp) + `\xB0C`}</h3>
+                            <h3 className="break-words">{weather[0].main}</h3>
+                            <div>
+                                <img className="w-12 -ml-16 -mb-20" src={humidity} alt="icon"></img>
+                                <h3 className="-mb-5">{temperature.humidity + ` %`}</h3>
+                            </div>
                         </div>
                     </div>
                 ) : (
                         <div>
                             {(currentWeather.cod === '404') ? (
                                 <div>
-                                    <h1 className="Loading">City Not Found</h1>
+                                    <h1 className="text-center text-white">City Not Found</h1>
                                 </div>
                             ) : (' ')}
 
@@ -50,25 +49,25 @@ const setClassBasedonWeather = (temperature, weather) => {
         let main = weather[0].main;
         let mausam = 'App';
         if (main.includes("Cloud")) {
-            mausam = 'cloud';
+            mausam = 'bg-cloud';
         }
         else if (main.includes("Clear")) {
-            mausam = 'clear-sky';
+            mausam = 'bg-clear-sky';
         }
         else if (main.includes("Snow")) {
-            mausam = 'snow';
+            mausam = 'bg-snow';
         }
         else if (main.includes("Rain")) {
-            mausam = 'rain';
+            mausam = 'bg-rain';
         }
         else if (main.includes("Thunderstorm")) {
-            mausam = 'thunder'
+            mausam = 'bg-thunder'
         }
         else {
-            mausam = 'mist'
+            mausam = 'bg-mist'
         }
         var div = document.getElementById("App");
-        div.className = `App ${mausam}`
+        div.className = `min-h-screen h-full bg-center bg-no-repeat bg-cover ${mausam} opacity-80`
     }
 }
 export default CurrentWeather;

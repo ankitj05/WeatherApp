@@ -1,7 +1,6 @@
 import React, { useContext } from 'react';
 import ForecastItems from './ForecastItems';
 import { v4 as uuid } from 'uuid';
-import '../../../styles/Forecast.css';
 import WeatherContext from '../../../context/weatherContext';
 
 const ForecastWeather = () => {
@@ -11,7 +10,7 @@ const ForecastWeather = () => {
 
     return (
         <div className="forecast">
-            {(items) ? (<div className="forecast-list">
+            {(items) ? (<div className="flex justify-around -mt-4 flex-wrap">
                 {
                     items.map(forecast => (
                         <ForecastItems key={uuid()} item={forecast} />
